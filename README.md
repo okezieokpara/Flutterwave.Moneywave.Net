@@ -1,2 +1,3 @@
 # Flutterwave.Moneywave.Net
-.NET library for Flutterwave Payment API
+.NET library for Flutterwave Moneywave Payment API
+This is primarily a .NET implementation for [Flutterwave Moneywave API](https://moneywave.flutterwave.com/api)
