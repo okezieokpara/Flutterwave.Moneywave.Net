@@ -1,0 +1,7 @@
+C:\Users\okezie.okpara\Documents\Dev\Projects\opensource\Flutterwave.Moneywave.Net\src\FlutterWaveConsol\bin\Debug\FlutterWaveConsol.exe.config
+C:\Users\okezie.okpara\Documents\Dev\Projects\opensource\Flutterwave.Moneywave.Net\src\FlutterWaveConsol\bin\Debug\FlutterWaveConsol.exe
+C:\Users\okezie.okpara\Documents\Dev\Projects\opensource\Flutterwave.Moneywave.Net\src\FlutterWaveConsol\bin\Debug\FlutterWaveConsol.pdb
+C:\Users\okezie.okpara\Documents\Dev\Projects\opensource\Flutterwave.Moneywave.Net\src\FlutterWaveConsol\obj\Debug\FlutterWaveConsol.csprojResolveAssemblyReference.cache
+C:\Users\okezie.okpara\Documents\Dev\Projects\opensource\Flutterwave.Moneywave.Net\src\FlutterWaveConsol\obj\Debug\FlutterWaveConsol.csproj.CoreCompileInputs.cache
+C:\Users\okezie.okpara\Documents\Dev\Projects\opensource\Flutterwave.Moneywave.Net\src\FlutterWaveConsol\obj\Debug\FlutterWaveConsol.exe
+C:\Users\okezie.okpara\Documents\Dev\Projects\opensource\Flutterwave.Moneywave.Net\src\FlutterWaveConsol\obj\Debug\FlutterWaveConsol.pdb
