@@ -3092,11 +3092,11 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "C:\\Users\\okezie.okpara\\Documents\\Dev\\Projects\\opensource\\Flutterwave.Moneywave.Net\\src\\Flutterwave.Moneywave.Net\\Flutterwave.Moneywave.Net.csproj",
+      "projectUniqueName": "C:\\Users\\okezie.okpara\\Documents\\Dev\\Projects\\Flutterwave.Moneywave.Net\\src\\Flutterwave.Moneywave.Net\\Flutterwave.Moneywave.Net.csproj",
       "projectName": "Flutterwave.Moneywave.Net",
-      "projectPath": "C:\\Users\\okezie.okpara\\Documents\\Dev\\Projects\\opensource\\Flutterwave.Moneywave.Net\\src\\Flutterwave.Moneywave.Net\\Flutterwave.Moneywave.Net.csproj",
+      "projectPath": "C:\\Users\\okezie.okpara\\Documents\\Dev\\Projects\\Flutterwave.Moneywave.Net\\src\\Flutterwave.Moneywave.Net\\Flutterwave.Moneywave.Net.csproj",
       "packagesPath": "C:\\Users\\okezie.okpara\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\okezie.okpara\\Documents\\Dev\\Projects\\opensource\\Flutterwave.Moneywave.Net\\src\\Flutterwave.Moneywave.Net\\obj\\",
+      "outputPath": "C:\\Users\\okezie.okpara\\Documents\\Dev\\Projects\\Flutterwave.Moneywave.Net\\src\\Flutterwave.Moneywave.Net\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

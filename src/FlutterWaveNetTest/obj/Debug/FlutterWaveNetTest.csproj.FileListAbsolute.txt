@@ -11,3 +11,15 @@ C:\Users\okezie.okpara\Documents\Dev\Projects\opensource\Flutterwave.Moneywave.N
 C:\Users\okezie.okpara\Documents\Dev\Projects\opensource\Flutterwave.Moneywave.Net\src\FlutterWaveNetTest\obj\Debug\FlutterWaveNetTest.csproj.CoreCompileInputs.cache
 C:\Users\okezie.okpara\Documents\Dev\Projects\opensource\Flutterwave.Moneywave.Net\src\FlutterWaveNetTest\obj\Debug\FlutterWaveNetTest.dll
 C:\Users\okezie.okpara\Documents\Dev\Projects\opensource\Flutterwave.Moneywave.Net\src\FlutterWaveNetTest\obj\Debug\FlutterWaveNetTest.pdb
+C:\Users\okezie.okpara\Documents\Dev\Projects\Flutterwave.Moneywave.Net\src\FlutterWaveNetTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\okezie.okpara\Documents\Dev\Projects\Flutterwave.Moneywave.Net\src\FlutterWaveNetTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\okezie.okpara\Documents\Dev\Projects\Flutterwave.Moneywave.Net\src\FlutterWaveNetTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\okezie.okpara\Documents\Dev\Projects\Flutterwave.Moneywave.Net\src\FlutterWaveNetTest\bin\Debug\FlutterWaveNetTest.dll
+C:\Users\okezie.okpara\Documents\Dev\Projects\Flutterwave.Moneywave.Net\src\FlutterWaveNetTest\bin\Debug\FlutterWaveNetTest.pdb
+C:\Users\okezie.okpara\Documents\Dev\Projects\Flutterwave.Moneywave.Net\src\FlutterWaveNetTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+C:\Users\okezie.okpara\Documents\Dev\Projects\Flutterwave.Moneywave.Net\src\FlutterWaveNetTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+C:\Users\okezie.okpara\Documents\Dev\Projects\Flutterwave.Moneywave.Net\src\FlutterWaveNetTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+C:\Users\okezie.okpara\Documents\Dev\Projects\Flutterwave.Moneywave.Net\src\FlutterWaveNetTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+C:\Users\okezie.okpara\Documents\Dev\Projects\Flutterwave.Moneywave.Net\src\FlutterWaveNetTest\obj\Debug\FlutterWaveNetTest.csproj.CoreCompileInputs.cache
+C:\Users\okezie.okpara\Documents\Dev\Projects\Flutterwave.Moneywave.Net\src\FlutterWaveNetTest\obj\Debug\FlutterWaveNetTest.dll
+C:\Users\okezie.okpara\Documents\Dev\Projects\Flutterwave.Moneywave.Net\src\FlutterWaveNetTest\obj\Debug\FlutterWaveNetTest.pdb
