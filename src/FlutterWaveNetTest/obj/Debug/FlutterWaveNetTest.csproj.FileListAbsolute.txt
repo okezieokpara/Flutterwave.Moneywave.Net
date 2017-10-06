@@ -20,6 +20,9 @@ C:\Users\okezie.okpara\Documents\Dev\Projects\Flutterwave.Moneywave.Net\src\Flut
 C:\Users\okezie.okpara\Documents\Dev\Projects\Flutterwave.Moneywave.Net\src\FlutterWaveNetTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
 C:\Users\okezie.okpara\Documents\Dev\Projects\Flutterwave.Moneywave.Net\src\FlutterWaveNetTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
 C:\Users\okezie.okpara\Documents\Dev\Projects\Flutterwave.Moneywave.Net\src\FlutterWaveNetTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+C:\Users\okezie.okpara\Documents\Dev\Projects\Flutterwave.Moneywave.Net\src\FlutterWaveNetTest\obj\Debug\FlutterWaveNetTest.csprojResolveAssemblyReference.cache
 C:\Users\okezie.okpara\Documents\Dev\Projects\Flutterwave.Moneywave.Net\src\FlutterWaveNetTest\obj\Debug\FlutterWaveNetTest.csproj.CoreCompileInputs.cache
 C:\Users\okezie.okpara\Documents\Dev\Projects\Flutterwave.Moneywave.Net\src\FlutterWaveNetTest\obj\Debug\FlutterWaveNetTest.dll
 C:\Users\okezie.okpara\Documents\Dev\Projects\Flutterwave.Moneywave.Net\src\FlutterWaveNetTest\obj\Debug\FlutterWaveNetTest.pdb
+C:\Users\okezie.okpara\Documents\Dev\Projects\Flutterwave.Moneywave.Net\src\FlutterWaveNetTest\bin\Debug\Flutterwave.Moneywave.Net.dll
+C:\Users\okezie.okpara\Documents\Dev\Projects\Flutterwave.Moneywave.Net\src\FlutterWaveNetTest\bin\Debug\Flutterwave.Moneywave.Net.pdb

@@ -1,16 +1,34 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace Flutterwave.Moneywave.Net.MoneyTransfer
 {
     public class MoneyTransfer
     {
-        public MoneywaveResponse CardToAccountTransfer(TransferRequest trasnferRequest)
+        private MoneyWaveRequest _request;
+        private const string TransferEndpoint = "/v1/transfer";
+
+        public MoneyTransfer(MoenyWavGateWayConfig config)
         {
-            return new MoneywaveResponse();
+            _request = new MoneyWaveRequest(config);
+        }
+
+        public async Task<MoneywaveResponse> CardToAccountTransfer(TransferRequest trasnferRequest)
+        {
+            var jsonRequestBody = JsonConvert.SerializeObject(trasnferRequest);
+            var httpRequest =
+                new HttpRequestMessage(new HttpMethod("POST"), new Uri(TransferEndpoint))
+                {
+                    Content = new StringContent(jsonRequestBody)
+                };
+            var response = await _request.Request(httpRequest);
+            return response;
         }
 
         public MoneywaveResponse CardToWallet(TransferRequest trasnferRequest)
