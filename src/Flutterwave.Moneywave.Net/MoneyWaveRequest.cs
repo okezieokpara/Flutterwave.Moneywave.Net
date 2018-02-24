@@ -3,13 +3,14 @@ using System;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
+using System.Text;
 
 namespace Flutterwave.Moneywave.Net
 {
     /// <summary>
     /// Idealy, there should be only one instance of this class
     /// </summary>
-	internal class MoneyWaveRequest
+	public class MoneyWaveRequest
     {
         private MerchantToken _merchantToken;
 
@@ -77,7 +78,7 @@ namespace Flutterwave.Moneywave.Net
             var client = HttpClient;//FlutterwaveMoneywaveUtility.CreateClient(Config.IsLive);
             var payload = new { apiKey = Config.ApiKey, secret = Config.SecretKey };
             var response = await client.PostAsync("/v1/merchant/verify",
-                new StringContent(JsonConvert.SerializeObject(payload)));
+                new StringContent(JsonConvert.SerializeObject(payload), Encoding.UTF8, "application/json"));
 
             var responseData = JsonConvert.DeserializeObject<MerchantToken>(await response.Content.ReadAsStringAsync());
             _merchantToken = responseData;
