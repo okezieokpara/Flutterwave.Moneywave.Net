@@ -10,7 +10,7 @@ namespace Flutterwave.Moneywave.Net
     /// <summary>
     /// Idealy, there should be only one instance of this class
     /// </summary>
-	public class MoneyWaveRequest
+	internal class MoneyWaveRequest
     {
         private MerchantToken _merchantToken;
 
