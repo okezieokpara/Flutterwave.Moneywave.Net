@@ -1,19 +1,18 @@
 ﻿using System;
-
 using System.Net.Http;
 using System.Net.Http.Headers;
 
-namespace Flutterwave.Moneywave.Net
+namespace Flutterwave.Moneywave.Net.Requests
 {
-    internal static class FlutterwaveMoneywaveUtility
+    internal static class HttpUtil
     {
-        public static Uri GetBaseUri(bool isLive)
+        internal static Uri GetBaseUri(bool isLive)
         {
             var result = isLive ? new Uri(FlutterwaveMoneyWaveConstants.LiveUrl) : new Uri(FlutterwaveMoneyWaveConstants.DemoUrl);
             return result;
         }
 
-        public static HttpClient CreateClient(bool isLive)
+        internal static HttpClient CreateClient(bool isLive)
         {
             var uri = isLive ? new Uri(FlutterwaveMoneyWaveConstants.LiveUrl) : new Uri(FlutterwaveMoneyWaveConstants.DemoUrl);
             var client = new HttpClient() { BaseAddress = uri };

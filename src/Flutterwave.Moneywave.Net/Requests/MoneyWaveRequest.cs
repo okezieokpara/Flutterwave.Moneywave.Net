@@ -1,11 +1,11 @@
-﻿using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.Net.Http;
 using System.Net.Http.Headers;
-using System.Threading.Tasks;
 using System.Text;
+using System.Threading.Tasks;
+using Newtonsoft.Json;
 
-namespace Flutterwave.Moneywave.Net
+namespace Flutterwave.Moneywave.Net.Requests
 {
     /// <summary>
     /// Idealy, there should be only one instance of this class
@@ -74,10 +74,9 @@ namespace Flutterwave.Moneywave.Net
         /// <returns>A new merchant token. Note: expires in 24 hours</returns>
         public async Task<MerchantToken> RequestToken()
         {
-
-            var client = HttpClient;//FlutterwaveMoneywaveUtility.CreateClient(Config.IsLive);
+            var client = HttpClient;//HttpUtil.CreateClient(Config.IsLive);
             var payload = new { apiKey = Config.ApiKey, secret = Config.SecretKey };
-            var response = await client.PostAsync("/v1/merchant/verify",
+            var response = await client.PostAsync(Endpoints.AccessToken,
                 new StringContent(JsonConvert.SerializeObject(payload), Encoding.UTF8, "application/json"));
 
             var responseData = JsonConvert.DeserializeObject<MerchantToken>(await response.Content.ReadAsStringAsync());

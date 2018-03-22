@@ -1,11 +1,6 @@
 ﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Flutterwave.Moneywave.Net
+namespace Flutterwave.Moneywave.Net.Requests
 {
     /// <summary>
     /// The response sent for all moneywave request
