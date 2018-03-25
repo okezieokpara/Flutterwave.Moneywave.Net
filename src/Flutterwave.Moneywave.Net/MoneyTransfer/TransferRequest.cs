@@ -1,14 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 using Newtonsoft.Json;
 
 namespace Flutterwave.Moneywave.Net.MoneyTransfer
 {
     /// <summary>
-    /// Builds a request for money transfer
+    ///To be deleted
     /// </summary>
     public class TransferRequest
     {

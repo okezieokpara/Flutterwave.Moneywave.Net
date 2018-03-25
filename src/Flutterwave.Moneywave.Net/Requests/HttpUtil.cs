@@ -14,7 +14,7 @@ namespace Flutterwave.Moneywave.Net.Requests
 
         internal static HttpClient CreateClient(bool isLive)
         {
-            var uri = isLive ? new Uri(FlutterwaveMoneyWaveConstants.LiveUrl) : new Uri(FlutterwaveMoneyWaveConstants.DemoUrl);
+            var uri = GetBaseUri(isLive);
             var client = new HttpClient() { BaseAddress = uri };
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));

@@ -1,26 +1,25 @@
-﻿using System;
-
+﻿using Flutterwave.Moneywave.Net.Requests;
+using Newtonsoft.Json;
+using System;
+using System.Net.Http;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Flutterwave.Moneywave.Net
 {
-    public class MoenyWavGateWayConfig
+    public class MoneyWavGateWayConfig
     {
+        private MerchantToken _merchantToken;
 
-        public MoenyWavGateWayConfig(bool isLive)
+        public MoneyWavGateWayConfig(bool isLive = false)
         {
             IsLive = isLive;
             ApiVersion = "v1";
         }
-
-        public MoenyWavGateWayConfig(bool isLive = false, string apiVersion = "v1")
+     
+        public MoneyWavGateWayConfig(string apiKey, string apiSecret, bool isLive)
         {
             IsLive = isLive;
-            ApiVersion = apiVersion;
-        }
-        public MoenyWavGateWayConfig(string apiKey, string apiSecret, bool isLive = false, string apiVersion = "v1")
-        {
-            IsLive = isLive;
-            ApiVersion = apiVersion;
             ApiKey = apiKey;
             SecretKey = apiSecret;
         }
@@ -35,12 +34,32 @@ namespace Flutterwave.Moneywave.Net
         /// The current api version to use
         /// Defaut is v1
         /// </summary>
-        public string ApiVersion { get; set; }
+        public string ApiVersion { get; }
 
-
-        public MerchantToken CreateAccessToken()
+        public MerchantToken MerchantToken
         {
-            return new MerchantToken();
+            get => _merchantToken;
+            set => _merchantToken = value;
+        }
+        /// <summary>
+        /// Request a new merhcant token
+        /// </summary>
+        /// <returns>A new merchant token. Note: expires in 24 hours</returns>
+        public async Task<MerchantToken> RequestToken()
+        {
+            var client = HttpUtil.CreateClient(IsLive);
+            var payload = new { apiKey = ApiKey, secret = SecretKey };
+            var response = await client.PostAsync(Endpoints.AccessToken,
+                new StringContent(JsonConvert.SerializeObject(payload), Encoding.UTF8, "application/json"));
+            MerchantToken result = null;
+            if (response.IsSuccessStatusCode)
+            {
+                // Set this only when succeeded
+                result = JsonConvert.DeserializeObject<MerchantToken>(await response.Content.ReadAsStringAsync());
+
+            }
+            _merchantToken = result; // This could be null
+            return result;
         }
 
     }

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Newtonsoft.Json;
 
 namespace Flutterwave.Moneywave.Net
 {
@@ -10,14 +6,20 @@ namespace Flutterwave.Moneywave.Net
     {
         public MerchantToken()
         {
-
+            Status = "";
+            Token = "";
         }
         public MerchantToken(string status, string token)
         {
             Status = status;
             Token = token;
         }
+        [JsonProperty("status")]
         public string Status { get; set; }
+        [JsonProperty("token")]
         public string Token { get; set; }
+
+        [JsonProperty("config")]
+        public object Config { get; set; }
     }
 }
