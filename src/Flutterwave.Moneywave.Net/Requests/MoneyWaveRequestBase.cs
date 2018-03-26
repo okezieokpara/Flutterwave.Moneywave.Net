@@ -27,7 +27,7 @@ namespace Flutterwave.Moneywave.Net.Requests
             {
                 var token = await Config.RequestToken();
 
-                if (token != null)
+                if (token != null && !string.IsNullOrEmpty(token.Token))
                 {
                     HttpClient.DefaultRequestHeaders.Add("Authorization", Config.MerchantToken.Token);
                 }

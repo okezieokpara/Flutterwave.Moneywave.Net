@@ -12,6 +12,8 @@ namespace Flutterwave.Moneywave.Net.Requests
         [JsonProperty("status")]
         public string Status { get; set; }
         public string AuthUrl { get; set; }
+        [JsonProperty("code")]
+        public string Code { get; set; }
 
         /// <summary>
         /// The message sent by money wave

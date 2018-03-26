@@ -25,9 +25,12 @@ namespace Flutterwave.Moneywave.Net.MoneyTransfer
             Lastname = lastName;
             Amount = amount;
         }
-        [JsonProperty("firstname")]
+        /// <summary>
+        /// the firstname of the sender
+        /// </summary>
+        [JsonProperty("firstname", Order = -2)]
         public string Firstname { get; set; }
-        [JsonProperty("lastname")]
+        [JsonProperty("lastname", Order = -1)]
         public string Lastname { get; set; }
         [JsonProperty("email")]
         public string Email { get; set; }
