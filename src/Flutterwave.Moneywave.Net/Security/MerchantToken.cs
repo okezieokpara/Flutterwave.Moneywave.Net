@@ -20,6 +20,21 @@ namespace Flutterwave.Moneywave.Net
         public string Token { get; set; }
 
         [JsonProperty("config")]
-        public object Config { get; set; }
+        public TokenConfig Config { get; set; }
+
+        public class TokenConfig
+        {
+            [JsonProperty("daily_limit")]
+            public long DailyLimit { get; set; }
+
+            [JsonProperty("maximum_limit")]
+            public long MaximumLimit { get; set; }
+
+            [JsonProperty("merchant_fee")]
+            public long MerchantFee { get; set; }
+
+            [JsonProperty("minimum_limit")]
+            public int MinimumLimit { get; set; }
+        }
     }
 }

@@ -32,12 +32,14 @@ namespace Flutterwave.Moneywave.Net.Requests
                     HttpClient.DefaultRequestHeaders.Add("Authorization", Config.MerchantToken.Token);
                 }
             }
-           
-            var httpResponse = await HttpClient.SendAsync(requestBody);
+            HttpResponseMessage httpResponse;
 
+            httpResponse = await HttpClient.SendAsync(requestBody);
             var response =
-                  JsonConvert.DeserializeObject<MoneywaveResponse<T2>>(await httpResponse.Content.ReadAsStringAsync());
+              JsonConvert.DeserializeObject<MoneywaveResponse<T2>>(await httpResponse.Content.ReadAsStringAsync());
             return response;
+
+
         }
     }
 }

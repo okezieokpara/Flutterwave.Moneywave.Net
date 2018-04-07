@@ -8,4 +8,10 @@
     <PackageReference Include="Newtonsoft.Json" Version="11.0.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Transactions\" />
+    <Folder Include="Wallet\" />
+    <Folder Include="Validation\" />
+  </ItemGroup>
+
 </Project>

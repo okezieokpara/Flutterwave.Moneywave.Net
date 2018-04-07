@@ -2,33 +2,33 @@
 using Newtonsoft.Json;
 using System;
 using System.Net.Http;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace Flutterwave.Moneywave.Net.MoneyTransfer
 {
 
-    public abstract class MoneyTransferBase : IMoneyTransfer<TransferParamsBase>
+    public abstract class MoneyTransferBase<T> : IMoneyTransfer<TransferParamsBase, T> where T : MoneyTransferResponseData
     {
-        private MoneyWaveRequest<MoneywaveResponse<MoneyTransferResponseData>, MoneyTransferResponseData> _moneyWaveRequest;
         protected MoneyTransferBase(MoneyWavGateWayConfig config)
         {
-            if (config == null)
-            {
-                throw new ArgumentException("The Config object cannot be null");
-            }
-            _moneyWaveRequest = new MoneyWaveRequest<MoneywaveResponse<MoneyTransferResponseData>, MoneyTransferResponseData>(config);
+            Config = config ?? throw new ArgumentException("The Config object cannot be null");
+            MoneyWaveRequest = new MoneyWaveRequest<MoneywaveResponse<T>, T>(config);
         }
-        public virtual async Task<MoneywaveResponse<MoneyTransferResponseData>> Transfer(TransferParamsBase moneyTransferParams)
+        protected internal abstract string PaymentEndpoint { get; set; } // Oga! Mad!
+
+        internal MoneyWaveRequest<MoneywaveResponse<T>, T> MoneyWaveRequest { get; }
+        protected MoneyWavGateWayConfig Config { get; }
+        public virtual async Task<MoneywaveResponse<T>> TransferAsync(TransferParamsBase moneyTransferParams)
         {
             var jsonPayload = JsonConvert.SerializeObject(moneyTransferParams);
-            var httpMessage = new HttpRequestMessage(HttpMethod.Post, Endpoints.Transfer)
+            var httpMessage = new HttpRequestMessage(HttpMethod.Post, PaymentEndpoint)
             {
-                Content = new StringContent(jsonPayload)
+                Content = new StringContent(jsonPayload, Encoding.UTF8, "application/json") // Remember to always add the encoding an content-type here
             };
 
-            var response = await _moneyWaveRequest.Request(httpMessage);
-
-            return (MoneywaveResponse<MoneyTransferResponseData>)response;
+            var response = await MoneyWaveRequest.Request(httpMessage);
+            return response;
         }
 
     }

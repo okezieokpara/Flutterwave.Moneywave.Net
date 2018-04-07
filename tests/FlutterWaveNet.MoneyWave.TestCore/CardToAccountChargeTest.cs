@@ -2,7 +2,6 @@
 using Flutterwave.Moneywave.Net.Cards;
 using Flutterwave.Moneywave.Net.MoneyTransfer;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Diagnostics;
 
 namespace FlutterWaveNet.MoneyWave.TestCore
 {
@@ -16,13 +15,18 @@ namespace FlutterWaveNet.MoneyWave.TestCore
                 TestConfig.apiKey, TestConfig.apiSecret, false);
             var cardTransfer = new CardTransfer(moneyWaveConfig);
 
-            var debitCard = new Card(TestConfig.testCard1No, TestConfig.testCard1ExpiryMonth, TestConfig.testCard1ExpiryYear, TestConfig.testCard1CVV);
-            var transferResponse = cardTransfer.Transfer(new CardTransferParams("Okezie", "Okpara", 598m, debitCard)).Result;
+            var debitCard = new Card(TestConfig.testCard1No, TestConfig.testCard1ExpiryMonth, TestConfig.testCard1ExpiryYear, TestConfig.testCard1CVV, TestConfig.testCard1Pin);
+            var cardParams = new CardTransferParams("Okezie", "Okpara", "okezieokpara@yahoo.com", "+2348022336925", 500m, debitCard)
+            {
+                Medium = "app"
+            };
+            var transferResponse = cardTransfer.TransferAsync(cardParams).Result;
+            Assert.AreEqual(transferResponse.Status, "success");
             Assert.IsNotNull(transferResponse.Data);
-            Assert.IsTrue(string.IsNullOrEmpty(transferResponse.Message));
-            Trace.WriteLine(transferResponse.Message);
-            Trace.WriteLine(transferResponse.Status);
-            
+            Assert.IsNotNull(transferResponse.Data.Transfer);
+
+       
+
         }
     }
 }

@@ -6,20 +6,14 @@ namespace Flutterwave.Moneywave.Net.MoneyTransfer
 {
     public class CardTransferParams : TransferParamsBase
     {
-        public CardTransferParams(string firstName, string lastName, decimal amount, Card card) : base(firstName, lastName, amount)
+
+        public CardTransferParams(string firstName, string lastName, string email, string phoneNumber, decimal amount, Card card): base(amount)
         {
             SetupCard(card);
-        }
-
-        public CardTransferParams(string firstName, string lastName, string phoneNumber, decimal amount, Card card) : base(firstName, lastName, phoneNumber, amount)
-        {
-            SetupCard(card);
-
-        }
-
-        public CardTransferParams(string firstName, string lastName, string email, string phoneNumber, decimal amount, Card card) : base(firstName, lastName, email, phoneNumber, amount)
-        {
-            SetupCard(card);
+            Firstname = firstName;
+            Lastname = lastName;
+            Email = email;
+            PhoneNumber = phoneNumber;
 
         }
         private void SetupCard(Card card)
@@ -30,6 +24,21 @@ namespace Flutterwave.Moneywave.Net.MoneyTransfer
             ExpiryYear = card.ExpiryYear;
             Pin = card.Pin;
         }
+
+        /// <summary>
+        /// the firstname of the sender
+        /// </summary>
+        [JsonProperty("firstname", Order = -2)]
+        public string Firstname { get; set; }
+        [JsonProperty("lastname", Order = -1)]
+        public string Lastname { get; set; }
+        [JsonProperty("email")]
+        public string Email { get; set; }
+        /// <summary>
+        /// Note that the phone number string must begin with a +
+        /// </summary>
+        [JsonProperty("phonenumber")]
+        public string PhoneNumber { get; set; }
 
         [JsonProperty("card_no")]
         public string CardNo { get; set; }
@@ -58,6 +67,10 @@ namespace Flutterwave.Moneywave.Net.MoneyTransfer
 
         [JsonProperty("redirecturl")]
         public string Redirecturl { get; set; }
+
+        [JsonProperty("narration")]
+        public string Narration { get; set; }
+
 
     }
 }

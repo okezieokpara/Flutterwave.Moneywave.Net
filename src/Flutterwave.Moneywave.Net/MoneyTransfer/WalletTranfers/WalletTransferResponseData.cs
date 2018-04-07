@@ -1,10 +1,8 @@
 ﻿using System;
 
-
 namespace Flutterwave.Moneywave.Net.MoneyTransfer
 {
-    internal interface IMoneyTransferParams
+    public class WalletTransferResponseData: MoneyTransferResponseData
     {
-        decimal Amount { get; set; }
     }
 }
