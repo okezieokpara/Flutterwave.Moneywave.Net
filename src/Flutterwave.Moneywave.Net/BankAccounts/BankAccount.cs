@@ -3,7 +3,7 @@ using Newtonsoft.Json;
 using System;
 
 
-namespace Flutterwave.Moneywave.Net
+namespace Flutterwave.Moneywave.Net.BankAccounts
 {
     public class BankAccount
     {

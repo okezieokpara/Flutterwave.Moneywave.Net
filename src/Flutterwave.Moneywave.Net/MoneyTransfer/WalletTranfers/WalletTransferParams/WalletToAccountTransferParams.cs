@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using Flutterwave.Moneywave.Net.BankAccounts;
+using Newtonsoft.Json;
 using System;
 namespace Flutterwave.Moneywave.Net.MoneyTransfer
 {
@@ -9,12 +10,14 @@ namespace Flutterwave.Moneywave.Net.MoneyTransfer
             Bankcode = bankCode;
             AccountNumber = accountNumber;
             SenderName = senderName;
+            Ref = Guid.NewGuid().ToString("N");
         }
         public WalletToAccountTransferParams(BankAccount account, string senderName, decimal amount, string @lock, string currency = "NGN") : base(amount, @lock, currency)
         {
             Bankcode = account.BankCode;
             AccountNumber = account.AccountNumber;
             SenderName = senderName;
+            Ref = Guid.NewGuid().ToString("N");
         }
         [JsonProperty("bankcode")]
         public string Bankcode { get; set; }

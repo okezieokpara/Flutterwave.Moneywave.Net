@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Specialized;
-using System.Collections.Generic;
-using System.Text;
 using System.Reflection;
 using Newtonsoft.Json;
 
@@ -29,20 +27,29 @@ namespace Flutterwave.Moneywave.Net.Reflection
             foreach (var prop in props)
             {
                 object[] attrs = prop.GetCustomAttributes(true);
-                foreach (var attr in attrs)
+                if (attrs.Length > 0)
                 {
-                    if (attr is JsonPropertyAttribute jsonProperty)
+                    foreach (var attr in attrs)
                     {
-                        var sttrValue = jsonProperty.PropertyName;
-                        var value = prop.GetValue(input);
-                        if (IsValueType(value) && !IsDefaultValue(value))
+                        if (attr is JsonPropertyAttribute jsonProperty)
                         {
-                            result.Add(sttrValue, value.ToString());
-                            // For now we can only serialize value types
+                            var sttrValue = jsonProperty.PropertyName;
+                            var value = prop.GetValue(input);
+                            if (IsValueType(value) && !IsDefaultValue(value))
+                            {
+                                result.Add(sttrValue, value.ToString());
+                                // For now we can only serialize value types
+                            }
+
                         }
 
                     }
                 }
+                else
+                {
+                    result.Add(prop.Name, prop.GetValue(input).ToString());
+                }
+
 
             }
 

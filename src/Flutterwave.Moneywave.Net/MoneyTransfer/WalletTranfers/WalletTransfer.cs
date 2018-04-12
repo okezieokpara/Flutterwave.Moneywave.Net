@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
 using Flutterwave.Moneywave.Net.Requests;
 using Newtonsoft.Json;
@@ -29,6 +27,9 @@ namespace Flutterwave.Moneywave.Net.MoneyTransfer
             {
                 case WalletToWalletTransferParams walletToWalletParams:
                     PaymentEndpoint = Endpoints.WalletToWalletTransfer;
+                    break;
+                case WalletToAccountTransferParams walletToAccountParams:
+                    PaymentEndpoint = Endpoints.WalletToAccountTransfer;
                     break;
                 default:
                     PaymentEndpoint = Endpoints.WalletToWalletTransfer;

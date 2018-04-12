@@ -12,22 +12,27 @@ namespace Flutterwave.Moneywave.Net.Banks
     /// </summary>
     public static class BankService
     {
-        private static MoneyWaveRequest<MoneywaveResponse<MoneyTransferResponseData>, MoneyTransferResponseData> _moneyWaveRequest = new MoneyWaveRequest<MoneywaveResponse<MoneyTransferResponseData>, MoneyTransferResponseData>(new MoneyWavGateWayConfig());
+        private static MoneyWaveRequest<MoneywaveResponse<BanksResponseData>, BanksResponseData> _moneyWaveRequest = new MoneyWaveRequest<MoneywaveResponse<BanksResponseData>, BanksResponseData>(new MoneyWavGateWayConfig());
         /// <summary>
         /// Gets a list of available banks and their codes
         /// </summary>
         /// <param name="country">Optional parameter e.g if you want Kenyan banks use "KE"</param>
         /// <returns></returns>
-        public static async Task<IEnumerable<Bank>> GetBankList(string country = "")
+        public static async Task<ICollection<Bank>> GetBankList(string country = "")
         {
-            var requestUrl = string.IsNullOrEmpty(country) ? Endpoints.BanksList : Endpoints.BanksList + HttpUtil.RequestQueryBuilder(country);
+            var requestUrl = string.IsNullOrEmpty(country) ? Endpoints.BanksList : Endpoints.BanksList + HttpUtil.RequestQueryBuilder(new { country });
 
 
             var requestMessage = new HttpRequestMessage(HttpMethod.Post, requestUrl);
 
-
             var resp = await _moneyWaveRequest.Request(requestMessage);
-            return new List<Bank>(); // Dummy Return;
+            var resultBanks = new List<Bank>();
+            foreach (var bank in resp.Data)
+            {
+                resultBanks.Add(new Bank(bank.Key, bank.Value));
+            }
+
+            return resultBanks;// Dummy Return;
         }
 
     }

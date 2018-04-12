@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Flutterwave.Moneywave.Net.BankAccounts;
+using System;
 
 namespace Flutterwave.Moneywave.Net
 {
