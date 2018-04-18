@@ -9,7 +9,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Transactions\" />
     <Folder Include="Wallet\" />
     <Folder Include="Validation\" />
   </ItemGroup>

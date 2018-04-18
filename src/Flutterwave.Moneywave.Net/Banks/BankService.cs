@@ -1,5 +1,4 @@
-﻿using Flutterwave.Moneywave.Net.MoneyTransfer;
-using Flutterwave.Moneywave.Net.Requests;
+﻿using Flutterwave.Moneywave.Net.Requests;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
@@ -13,6 +12,8 @@ namespace Flutterwave.Moneywave.Net.Banks
     public static class BankService
     {
         private static MoneyWaveRequest<MoneywaveResponse<BanksResponseData>, BanksResponseData> _moneyWaveRequest = new MoneyWaveRequest<MoneywaveResponse<BanksResponseData>, BanksResponseData>(new MoneyWavGateWayConfig());
+
+
         /// <summary>
         /// Gets a list of available banks and their codes
         /// </summary>
@@ -22,9 +23,7 @@ namespace Flutterwave.Moneywave.Net.Banks
         {
             var requestUrl = string.IsNullOrEmpty(country) ? Endpoints.BanksList : Endpoints.BanksList + HttpUtil.RequestQueryBuilder(new { country });
 
-
-            var requestMessage = new HttpRequestMessage(HttpMethod.Post, requestUrl);
-
+            var requestMessage = _moneyWaveRequest.RequestBuilder.BuildWebRequest(HttpMethod.Post, requestUrl);//new HttpRequestMessage(HttpMethod.Post, requestUrl);
             var resp = await _moneyWaveRequest.Request(requestMessage);
             var resultBanks = new List<Bank>();
             foreach (var bank in resp.Data)

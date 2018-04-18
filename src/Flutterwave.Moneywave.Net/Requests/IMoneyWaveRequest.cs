@@ -7,5 +7,6 @@ namespace Flutterwave.Moneywave.Net.Requests
     {
         MoneyWavGateWayConfig Config { get; }
         Task<MoneywaveResponse<T2>> Request(HttpRequestMessage requestBody);
+        IWebRequestBuilder RequestBuilder { get; }
     }
 }

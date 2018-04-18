@@ -27,6 +27,8 @@ namespace Flutterwave.Moneywave.Net.Requests
         }
         internal static string RequestQueryBuilder(object input)
         {
+            if (input == null)
+                return "";
             var serializedData = ReflectionUtil.GetAllJsonAttributes(input);
             var resultString = "?";
             //IEnumerable<object> attrData;

@@ -14,12 +14,15 @@ namespace Flutterwave.Moneywave.Net.Requests
             Config = config ?? throw new ArgumentException("The config object is required");
 
             HttpClient = HttpUtil.CreateClient(config.IsLive);
+            RequestBuilder = new WebRequestBuilder();
         }
         [JsonProperty("access_token")]
         public string AccessToken { get; set; }
         public MoneyWavGateWayConfig Config { get; }
-        protected HttpClient HttpClient { get; }
 
+        public IWebRequestBuilder RequestBuilder { get; set; }
+
+        protected HttpClient HttpClient { get; }
 
         public virtual async Task<MoneywaveResponse<T2>> Request(HttpRequestMessage requestBody)
         {
