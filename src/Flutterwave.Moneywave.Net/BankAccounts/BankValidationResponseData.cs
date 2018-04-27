@@ -6,6 +6,6 @@ namespace Flutterwave.Moneywave.Net.BankAccounts
     public class BankValidationResponseData : IMoneywaveResponseData
     {
         [JsonProperty("account_name")]
-        public string Account_name { get; set; }
+        public string AccountName { get; set; }
     }
 }

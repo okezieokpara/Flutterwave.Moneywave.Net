@@ -4,7 +4,10 @@ using System.Collections.Generic;
 
 namespace Flutterwave.Moneywave.Net
 {
-    public class CardDetails
+    /// <summary>
+    /// Marked for delete
+    /// </summary>
+    internal class CardDetails
     {
         public CardDetails(string cardNumber, string nameOnCard, string cvv)
         {

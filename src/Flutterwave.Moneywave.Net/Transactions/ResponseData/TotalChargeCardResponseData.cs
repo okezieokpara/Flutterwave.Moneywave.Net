@@ -2,7 +2,7 @@
 using Newtonsoft.Json;
 
 
-namespace Flutterwave.Moneywave.Net.Transactions.ResponseData
+namespace Flutterwave.Moneywave.Net.Transactions
 {
     public class TotalChargeCardResponseData : IMoneywaveResponseData
     {

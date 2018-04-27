@@ -30,6 +30,9 @@ namespace Flutterwave.Moneywave.Net.BankAccounts
             BankCode = bank.BankCode;
             AccountNumber = accountNumber;
         }
+
+        [JsonProperty("id")]
+        public long Id { get; set; }
         /// <summary>
         /// Account number of the bank account
         /// </summary>
@@ -42,5 +45,6 @@ namespace Flutterwave.Moneywave.Net.BankAccounts
         /// 
         [JsonProperty("bankcode")]
         public string BankCode { get; set; }
+     
     }
 }

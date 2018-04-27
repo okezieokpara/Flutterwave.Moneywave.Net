@@ -19,5 +19,7 @@
         public const string PreviousTransactionWallet = FlutterwaveMoneyWaveConstants.ApiVersion + "/disburse/status";
         public const string TransactionStatus = FlutterwaveMoneyWaveConstants.ApiVersion + "/transfer/charge/status";
 
+        public const string ValidateAcountCharge = FlutterwaveMoneyWaveConstants.ApiVersion + "/transfer/charge/auth/account";
+
     }
 }

@@ -10,12 +10,13 @@ namespace Flutterwave.Moneywave.Net.Requests
     public class MoneywaveResponse<T> : IMoneywaveResponse<T> where T : IMoneywaveResponseData
     {
         public string ResponseCode { get; set; }
-        public string ResponseHtml { get; set; }
+
         [JsonProperty("status")]
         public string Status { get; set; }
-        public string AuthUrl { get; set; }
+
         [JsonProperty("code")]
         public string Code { get; set; }
+
 
         /// <summary>
         /// The message sent by money wave
@@ -31,16 +32,16 @@ namespace Flutterwave.Moneywave.Net.Requests
         [OnError]
         internal void OnError(StreamingContext streamingContext, ErrorContext error)
         {
+
+#if DEBUG
+            error.Handled = false;
+#else
             if (error.Error is JsonSerializationException) //This tries to cover up for what I percieve to be a bug in the RavePay API
             {
                 Data = default(T);
                 error.Handled = true;
                 return;
             }
-#if DEBUG
-            error.Handled = false;
-#else
-            error.Handled = true;
 #endif
         }
     }

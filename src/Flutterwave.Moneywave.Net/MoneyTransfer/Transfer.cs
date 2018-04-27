@@ -66,7 +66,6 @@ namespace Flutterwave.Moneywave.Net.MoneyTransfer
         public string Ip { get; set; }
 
         [JsonProperty("lastName")]
-
         public string LastName { get; set; }
         [JsonProperty("medium")]
         public string Medium { get; set; }
